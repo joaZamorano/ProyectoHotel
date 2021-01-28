@@ -82,13 +82,13 @@
            </tr>   
    </div>
    <div class="botones">
-       <form action="index.html" method="POST">
+       <form action="{% url 'index' % }" method="POST">
     
-    <button type="submit" formaction="index.html" >Aceptar</button>
+    <button type="submit" formaction="{% url 'index' % }" >Aceptar</button>
 </form>
 <div class="boton2">
-    <form action="index.html" method="POST">
-        <button type="submit" formaction="index.html">Atras</button>
+    <form action="{% url 'index' % }" method="POST">
+        <button type="submit" formaction="{% url 'index' % }">Atras</button>
 
     </form>
 </div>

@@ -30,9 +30,9 @@
                     <a href="#" id="enlace-servicio" class="btn-header">Servicios</a>
                     <a href="#" id="enlace-trabajo" class="btn-header">Habitaciones</a>
                     <a href="#" id="enlace-contacto" class="btn-header">Redes sociales</a>
-                    <a href="{% static 'usuario/reservar.html' %}" id="enlace-trabajo" class="btn-header">Reservar Habitacion</a>
-                    <a href="Habitaciones reservadas.html" id="enlace-trabajo" class="btn-header"></a>
-                    <a href="login.html" id="enlace-trabajo" class="btn-header">Login</a>                    
+                    <a href="{% url 'reservar' %}" id="enlace-trabajo" class="btn-header">Reservar Habitacion</a>
+                    <a href="{% url 'habitaciones' %}" id="enlace-trabajo" class="btn-header"></a>
+                    <a href="{% url 'login' % }" id="enlace-trabajo" class="btn-header">Login</a>                    
                 </div>
                 <div class="icono" id="open">
                     <span>&#9776;</span>

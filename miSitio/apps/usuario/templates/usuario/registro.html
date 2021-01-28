@@ -48,15 +48,15 @@
         </tr>
     <tr>
         <div class="botones">
-            <form action="index.html" method="POST">
+            <form action="{% url 'index' % }" method="POST">
          <!--button type="submit" formaction="login.html">Volver</button-->
-         <button type="submit" formaction="index.html" >Aceptar</button>
+         <button type="submit" formaction="{% url 'index' % }" >Aceptar</button>
      </form>
         </div>
     </tr>
     <div class="botones">
-        <form action="index.html" method="POST">
-            <button type="submit" formaction="login.html">Atras</button>
+        <form action="{% url 'index' % }" method="POST">
+            <button type="submit" formaction="{% url 'login' % }">Atras</button>
     
         </form>
     </div>
