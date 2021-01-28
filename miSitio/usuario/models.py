@@ -7,12 +7,12 @@ class Cliente(models.Model):
     email = models.EmailField()
     telefono = models.IntegerField()
     fechaN = models.DateField(blank=False, null=False)
-    usuario = models.CharField(blank=False)
-    contraseña = models.CharField(blank=False)
+    usuario = models.CharField(max_length=12,blank=False)
+    contraseña = models.CharField(max_length=8, blank=False)
 
 class Habitacion(models.Model):
     nHabitacion = models.IntegerField(primary_key=True)
-    tipoHabitacion = models.CharField()
+    tipoHabitacion = models.CharField(max_length=20)
     metroCuadrado = models.IntegerField()
     baños = models.IntegerField()
     camas = models.IntegerField()
