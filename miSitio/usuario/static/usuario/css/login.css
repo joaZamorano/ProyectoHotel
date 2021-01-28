@@ -2,7 +2,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(img/3.jpg);
+    background: url(" {% static 'usuario/img/3.jpg' %} ");
     background-size: cover;
     background-position: center;
     font-family: sans-serif;

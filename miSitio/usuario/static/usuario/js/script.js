@@ -9,6 +9,9 @@ function onFormSubmit() {
         else
             updateRecord(formData);
         resetForm();
+
+
+        
     }
 }
 
@@ -17,7 +20,9 @@ function readFormData() {
     formData["fullName"] = document.getElementById("fullName").value;
     formData["empCode"] = document.getElementById("empCode").value;
     formData["salary"] = document.getElementById("salary").value;
+    formData["btn1"] = document.getElementById("btn1").value;
     formData["city"] = document.getElementById("city").value;
+
     return formData;
 }   
 
@@ -31,9 +36,11 @@ function insertNewRecord(data) {
     cell3 = newRow.insertCell(2);
     cell3.innerHTML = data.salary;
     cell4 = newRow.insertCell(3);
-    cell4.innerHTML = data.city;
-    cell4 = newRow.insertCell(4);
-    cell4.innerHTML = `<a onClick="onEdit(this)">Modificar</a>
+    cell4.innerHTML = data.btn1;
+    cell5 = newRow.insertCell(4);
+    cell5.innerHTML = data.city;
+    cell6 = newRow.insertCell(5);
+    cell6.innerHTML = `<a onClick="onEdit(this)">Modificar</a>
                        <a onClick="onDelete(this)">Borrar</a>`;
 }
 
@@ -41,6 +48,7 @@ function resetForm() {
     document.getElementById("fullName").value = "";
     document.getElementById("empCode").value = "";
     document.getElementById("salary").value = "";
+    document.getElementById("btn1").value = "";
     document.getElementById("city").value = "";
     selectedRow = null;
 }
@@ -50,12 +58,14 @@ function onEdit(td) {
     document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
     document.getElementById("empCode").value = selectedRow.cells[1].innerHTML;
     document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("btn1").value = selectedRow.cells[4].innerHTML;
     document.getElementById("city").value = selectedRow.cells[3].innerHTML;
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.fullName;
     selectedRow.cells[1].innerHTML = formData.empCode;
     selectedRow.cells[2].innerHTML = formData.salary;
+    selectedRow.cells[4].innerHTML = formData.btn1;
     selectedRow.cells[3].innerHTML = formData.city;
 }
 

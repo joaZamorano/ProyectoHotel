@@ -21,7 +21,7 @@
             <td>
                 <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                     <div>
-                        <label><b>Nombre</b></label><label class="validation-error hide" id="fullNameValidationError">Todos los campos son obligatorios</label>
+                        <label><b>ID</b></label><label class="validation-error hide" id="fullNameValidationError">Todos los campos son obligatorios</label>
                         <input type="text" name="fullName" id="fullName">
                     </div>
                     <div>
@@ -29,11 +29,15 @@
                         <input type="text" name="empCode" id="empCode">
                     </div>
                     <div>
-                        <label><b>Correo</b></label>
+                        <label><b>Fecha reserva</b></label>
                         <input type="text" name="salary" id="salary">
                     </div>
                     <div>
-                        <label><b>Habitacion</b></label>
+                        <label><b>Dias reservados</b></label>
+                        <input type="text" name="btn1" id="btn1">
+                    </div>
+                    <div>
+                        <label><b>N. Habitacion</b></label>
                         <input type="text" name="city" id="city">
                     </div><br>
                     <div  class="form-action-buttons">
@@ -54,10 +58,11 @@
                 <table class="list" id="employeeList">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
+                            <th>ID</th>
                             <th>Rut</th>
-                            <th>Correo</th>
-                            <th>Habitacion</th>
+                            <th>Fecha reserva</th>
+                            <th>Dias reservados</th>
+                            <th>N. Habitacion</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -68,7 +73,7 @@
             </td>
         </tr>
     </table>
-    <script src="{% static 'usuario/js/script.js %} "></script>
+    <script src="{% static 'usuario/js/script.js' %} "></script>
    
     </div>
 </body>
