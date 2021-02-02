@@ -8,7 +8,22 @@ def login(request):
     return render(request, 'usuario/login.html', {})
 
 def admin(request):
-    return render(request, 'usuario/admin.html', {})
+    if request.POST:
+        reservas = Reservas()
+        reservas.id = request.POST.get('id')
+        reservas.diasReservados = request.POST.get('diasReservados')
+        reservas.fechaReserva = request.POST.get('fechaReserva')
+        reservas.rutCliente = request.POST.get('rutCliente')
+        reservas.nHabitacion = request.POST.get('nHabitacion')
+        
+
+        try:
+            reservas.save()
+        except:
+            mensaje = "No se ha podido agregar"
+        return redirect('admin')
+
+    return render(request, 'usuario/admin.html', {})   
 
 def logout(request):
     return render(request, 'usuario/index.html', {})
@@ -21,4 +36,5 @@ def registro(request):
 
 def habitaciones(request):
     return render(request, 'usuario/Habitaciones reservadas.html', {})
-    
+
+ 

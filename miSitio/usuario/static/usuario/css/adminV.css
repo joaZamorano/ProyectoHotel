@@ -83,7 +83,7 @@ label.validation-error{
     display:none;
 }
 
-.boton button{
+.boton{
     width: 30%;
     border:none;
     border-radius: 4px;
