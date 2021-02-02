@@ -48,7 +48,7 @@
         </tr>
     <tr>
         <div class="botones">
-            <form action="{% url 'index' % }" method="POST">
+            <form action="{% url 'index' % }" method="GET">
          <!--button type="submit" formaction="login.html">Volver</button-->
          <button type="submit" formaction="{% url 'index' % }" >Aceptar</button>
      </form>
@@ -56,7 +56,7 @@
     </tr>
     <div class="botones">
         <form action="{% url 'login' % }" method="POST">
-            <button type="submit" formaction="{% url 'registro/login' %}">Atras</button>
+            <button type="submit" formaction="{% url 'login' %}">Atras</button>
     
         </form>
     </div>
