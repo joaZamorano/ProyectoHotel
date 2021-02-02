@@ -38,15 +38,6 @@ body{
 .datos table{
     color: white;
 }
-.botones button{
-    border:1px solid slategray;
-    border-radius: 3px;
-    height: 30px;
-    background-color: rgb(39, 38, 38);
-    color:white;
-    padding: 0px 20px;
-    cursor: pointer;
-}
 select{
     border:1px solid  rgb(39, 38, 38);
     border-radius: 3px;
@@ -54,4 +45,15 @@ select{
     width: 100%;
     height: 30px;
     color: white;  
+}.botones button a{
+    border: none;
+    outline: none;
+    height: 25px;
+    background: #fafafa;
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #ffc107;;
+    color: #000000;
+      
 }

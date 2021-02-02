@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="{% static 'usuario/css/login.css' %}">
 </head>
 <body>
-<form id="login-box" class="LoginBox" action="#">
+<form id="login-box" class="LoginBox" action="">
     <div class="loginbox">
         <h1>Ingrese aquí</h1>
         <form method="GET">
@@ -19,12 +19,14 @@
             <input class="form-group" name="username" type="text" placeholder="Ingrese Usuario">
             <p>Contraseña</p>
             <input class="form-group" name="password" type="password" placeholder="Ingrese contraseña">
-            <button type="submit" formaction='index'>Iniciar Sesión</button> || <button type="submit" formaction='index'>Atrás</button>
+            <button type="submit" formaction="{% url 'index' %}">Iniciar Sesión</button> || <button type="submit" formaction="{% url 'index' %}">Atrás</button>
             <br>
                
                 <a href="#">No recuerdas tu contraseña?</a><br>
                 <a href="{% url 'registro' %}">Registrate</a><br>
-                <a href="{% url 'admin' %} ">Admin</a>
+                <a href="{% url 'admin' %} ">Admin</a><br>
+                <a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
+
         </form>
     </div>
 </form>
