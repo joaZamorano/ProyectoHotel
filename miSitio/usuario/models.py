@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib import admin
+from miSitio.usuario.models import Author
+
+admin.site.register(Author)
 
 class Cliente(models.Model):
     rut = models.CharField(max_length=12, primary_key=True)
