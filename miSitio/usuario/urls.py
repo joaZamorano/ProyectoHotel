@@ -1,13 +1,13 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth.views import LoginView,LogoutView
-from .views import index, admin, habitaciones, login, logout, registro, reservar
+from .views import index, administrador, habitaciones, login, logout, registro, reservar
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path('',index, name='index'),
     path('index/', views.index , name='index'),
-    path('admin/', views.admin, name='admin'),
+    path('administrador/', views.admininistrador, name='administrador'),
     path('login/',LoginView.as_view(template_name='usuario/login.html'), name="login"),
     path('index/',LogoutView.as_view(template_name='usuario/index.html'),name="logout"), 
     path('registro/', views.registro, name='registro'),

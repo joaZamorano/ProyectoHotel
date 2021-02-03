@@ -21,9 +21,9 @@ def admin(request):
             reservas.save()
         except:
             mensaje = "No se ha podido agregar"
-        return redirect('admin')
+        return redirect('administrador')
 
-    return render(request, 'usuario/admin.html', {})   
+    return render(request, 'usuario/administrador.html', {})   
 
 def logout(request):
     return render(request, 'usuario/index.html', {})
