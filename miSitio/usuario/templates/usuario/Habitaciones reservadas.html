@@ -1,55 +1,79 @@
+<!DOCTYPE html>
+<html>
 
-<html lang="en">
 <head>
     {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel la diversión</title>
-    <link rel="stylesheet" href="{% static 'usuario/css/habitaciones_reservadas.css' %}">
+    <title>
+        Habitaciones
+    </title>
+    <link rel="stylesheet" href="{% static 'usuario/css/adminV.css' %} ">
 </head>
-<body> 
-  <div class="habitacionesreservadas"><center><H1>Habitaciones Reservadas</H1></center><hr>
-  </div>
-    
-    <table>
+
+<body>
+    <div class="Habitacion">
+
+
+
+        <center><h1><b>Habitaciones</b></h1></center><hr>
+    </div>
+    <table style="width: 50%;">
         <tr>
-          <th>Reservador</th>
-          <th>Dias reservados</th>
-          <th>Fecha de reserva</th>
-          <th>Tipo de habitacion</th>
+            <td style="width: 10%;">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                        <label><b>Numero Habitacion</b></label><label class="validation-error hide" id="fullNameValidationError">Todos los campos son obligatorios</label>
+                        <input type="text" name="fullName" id="nHabitacion">
+                    
+                   
+                        <label><b>tipo habitacion</b></label>
+                        <input type="text" name="empCode" id="tipoHabitacion">
+                    
+                        <label><b>metro Cuadrado</b></label>
+                        <input type="text" name="salary" id="metroCuadrado">
+                  
+                        <label><b>Baños</b></label>
+                        <input type="text" name="btn1" id="baños">
+                   
+                        <label><b>camas</b></label>
+                        <input type="text" name="city" id="camas">
+                    <br>
+                    <input  type="submit" value="actualizar">
+                   
+                    
+                </form>
+                
+              
+               <a href="{% url 'administrador' % }" class="boton">Atras</a>
+                        
+                
+                    
+                
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        {% for a in Habitaciones %}
+
+            <tr>
+              <td>{{ a.nHabitacion }}</td>
+              <td>{{ a.tipoHabitacion }}</td>
+              <td>{{ a.metroCuadrado }}</td>
+              <td>{{ a.baños }}</td>
+              <td>{{ a.camas }}</td>
+            </tr>
+
+            {% endfor %}
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </td>
         </tr>
-        <tr>
-          <td>Sofía Cabrera</td>
-          <td>5</td>
-          <td>14/02 - 19/02</td>
-          <td>1 estrella</td>
-        </tr>
-        <tr>
-          <td>Joaquin Zamorano</td>
-          <td>2</td>
-          <td>11/03 - 13/03</td>
-          <td>2 estrellas</td>
-        </tr>
-        <tr>
-          <td>Ignacio Morales</td>
-          <td>7</td>
-          <td>01/07 - 08/07 </td>
-          <td>3 estrellas</td>
-        </tr>
-        <tr>
-          <td>Ricardo Salas</td>
-          <td>10</td>
-          <td>06/09 - 16/09</td>
-          <td>Vip</td>
-        </tr>
-      </table>
-    
-  <br>
-  <div class="boton">
-  <form action="{% url 'index' % }" method="GET">
-    <button type="submit" formaction="{% url 'index' % }">Atras</button>
-  </form>
-</div>
-    
+    </table>
+    <script src="{% static 'usuario/js/script.js' %} "></script>
+   
+    </div>
 </body>
+
 </html>
